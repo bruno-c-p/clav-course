@@ -7,7 +7,7 @@ import javax.swing.JOptionPane;
 public class Bmi {
 
     /*
-     * 1 - Make a program in which the user
+     * Make a program in which the user
      * enter the name, weight and height of a
      * person. At the end, display the name
      * and index of Body Mass (BMI) of the person.
