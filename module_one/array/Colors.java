@@ -1,4 +1,4 @@
-package array;
+package module_one.array;
 
 import javax.swing.JOptionPane;
 

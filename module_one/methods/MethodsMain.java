@@ -1,4 +1,4 @@
-package methods;
+package module_one.methods;
 
 import javax.swing.JOptionPane;
 

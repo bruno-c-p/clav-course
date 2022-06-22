@@ -1,4 +1,4 @@
-package conditional;
+package module_one.conditional;
 
 import javax.swing.JOptionPane;
 

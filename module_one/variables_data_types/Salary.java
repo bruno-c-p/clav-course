@@ -1,4 +1,4 @@
-package variables_data_types;
+package module_one.variables_data_types;
 
 import java.text.DecimalFormat;
 

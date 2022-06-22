@@ -1,4 +1,4 @@
-package multidimensional_array;
+package module_one.multidimensional_array;
 
 import javax.swing.JOptionPane;
 

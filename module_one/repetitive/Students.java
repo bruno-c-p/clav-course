@@ -1,4 +1,4 @@
-package repetitive;
+package module_one.repetitive;
 
 import javax.swing.JOptionPane;
 
