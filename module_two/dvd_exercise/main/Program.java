@@ -31,6 +31,12 @@ public class Program {
                 case 3:
                     JOptionPane.showMessageDialog(null, "Dvds total value: " + sumValues(dvds));
                     break;
+                case 4:
+                    searchBooksByReleaseYearDate(dvds);
+                    break;
+                case 5:
+                    searchBooksByTitle(dvds);
+                    break;
             }
 
         } while (op != 6);
@@ -72,5 +78,39 @@ public class Program {
         }
 
         return sum;
+    }
+
+    public static void searchBooksByReleaseYearDate(List<DVD> dvds) {
+
+        String search = JOptionPane.showInputDialog("Book release year: ");
+        StringBuilder sb = new StringBuilder();
+        sb.append("Books list:\n\n");
+
+        for (DVD dvd : dvds) {
+
+            if (dvd.releaseYearDate.equals(search)) {
+
+                sb.append(dvd.title + "\n");
+            }
+        }
+
+        JOptionPane.showMessageDialog(null, sb.toString());
+    }
+
+    public static void searchBooksByTitle(List<DVD> dvds) {
+
+        String search = JOptionPane.showInputDialog("Book title: ");
+        StringBuilder sb = new StringBuilder();
+        sb.append("Books list:\n\n");
+
+        for (DVD dvd : dvds) {
+
+            if (dvd.title.startsWith(search)) {
+
+                sb.append(dvd.title + "\n");
+            }
+        }
+
+        JOptionPane.showMessageDialog(null, sb.toString());
     }
 }

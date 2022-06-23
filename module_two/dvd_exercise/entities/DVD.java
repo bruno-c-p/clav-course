@@ -9,8 +9,8 @@ import javax.swing.JOptionPane;
 
 public class DVD {
 
-    String title;
-    String releaseYearDate;
+    public String title;
+    public String releaseYearDate;
     public Double value;
 
     @Override
