@@ -1,10 +1,5 @@
 package module_two.dvd_exercise.entities;
 
-import java.awt.HeadlessException;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
 import javax.swing.JOptionPane;
 
 public class DVD {
