@@ -7,11 +7,11 @@ import javax.swing.JOptionPane;
 public class Account {
 
     private static DecimalFormat df = new DecimalFormat(".00");
-    
+
     private int number;
     private double balance;
     private Agency agency;
-    private Client client; 
+    private Client client;
 
     @Override
     public String toString() {
@@ -40,8 +40,16 @@ public class Account {
         balance -= amount;
     }
 
-    public void transfer(double amount, Client client) {
+    public void transfer(double amountSended, Account receivingAccount) {
 
+        if (this.getNumber() == receivingAccount.getNumber()) {
+
+            if (!(this.getBalance() < amountSended)) {
+
+                this.withdraw(amountSended);
+                receivingAccount.deposit(amountSended);
+            }
+        }
     }
 
     public int getNumber() {

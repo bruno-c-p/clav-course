@@ -46,9 +46,14 @@ public class Program {
                         switch (choosenOption) {
 
                             case 1:
-                                
+                                accountDeposit(accounts);
                                 break;
-
+                            case 2:
+                                accountWithdraw(accounts);
+                                break;
+                            case 3:
+                                moneyTransferBetweenAccounts(accounts);
+                                break;
                         }
 
                     } while (choosenOption != 4);
@@ -60,9 +65,14 @@ public class Program {
                 case 6:
                     verifyBalanceOfClient(clients, accounts);
                     break;
+                case 7:
+                    JOptionPane.showMessageDialog(null, "You left!");
+                    break;
+                default:
+                    JOptionPane.showMessageDialog(null, "Choose a valid option!");
             }
 
-        } while (op != 5);
+        } while (op != 7);
     }
 
     public static int menu() {
@@ -119,6 +129,40 @@ public class Program {
         return Integer.parseInt(JOptionPane.showInputDialog(sb.toString()));
     }
 
+    private static void accountDeposit(List<Account> accounts) {
+
+        int selectedAccount = Integer
+                .parseInt(JOptionPane.showInputDialog("Choose an account:\n" + accountsList(accounts)));
+
+        double amount = Double
+                .parseDouble(JOptionPane.showInputDialog("Amount to deposit:"));
+
+        accounts.get(selectedAccount - 1).deposit(amount);
+    }
+
+    private static void accountWithdraw(List<Account> accounts) {
+
+        int selectedAccount = Integer
+                .parseInt(JOptionPane.showInputDialog("Choose an account:\n" + accountsList(accounts)));
+
+        double amount = Double
+                .parseDouble(JOptionPane.showInputDialog("Amount to withdraw:"));
+
+        accounts.get(selectedAccount - 1).withdraw(amount);
+    }
+
+    private static void moneyTransferBetweenAccounts(List<Account> accounts) {
+
+        int selectedAccount = Integer
+                .parseInt(JOptionPane.showInputDialog("Choose the sender account:\n" + accountsList(accounts)));
+        int receivingAccount = Integer
+                .parseInt(JOptionPane.showInputDialog("Choose the receiver account:\n" + accountsList(accounts)));
+
+        double amount = Integer.parseInt(JOptionPane.showInputDialog("Amount to send:\n"));
+
+        accounts.get(selectedAccount - 1).transfer(amount, accounts.get(receivingAccount - 1));
+    }
+
     private static void listAgencyAccounts(List<Agency> agencies, List<Account> accounts) {
 
         int agency = Integer.parseInt(JOptionPane.showInputDialog("Choose an agency:\n" + agenciesList(agencies)));
@@ -146,7 +190,7 @@ public class Program {
 
             if (account.getClient() == accounts.get(client - 1).getClient()) {
 
-                JOptionPane.showMessageDialog(null, "Balance: " + df.format(account.getBalance()));
+                JOptionPane.showMessageDialog(null, "Balance: $" + df.format(account.getBalance()));
             }
         }
     }
