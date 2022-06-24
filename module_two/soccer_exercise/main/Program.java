@@ -65,7 +65,7 @@ public class Program {
 
         for (Team team : teams) {
 
-            if (team.name.contains(search)) {
+            if (team.getName().contains(search)) {
 
                 JOptionPane.showMessageDialog(null, team.toString());
             }
@@ -78,7 +78,7 @@ public class Program {
 
         for (Team team : teams) {
 
-            if (team.striker().goalsQuantity > striker.goalsQuantity) {
+            if (team.striker().getGoalsQuantity() > striker.getGoalsQuantity()) {
 
                 striker = team.striker();
             }
@@ -99,6 +99,6 @@ public class Program {
             }
         }
 
-        JOptionPane.showMessageDialog(null, "Team with more goals: " + moreGoals.name);
+        JOptionPane.showMessageDialog(null, "Team with more goals: " + moreGoals.getName());
     }
 }

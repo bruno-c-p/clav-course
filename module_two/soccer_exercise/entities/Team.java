@@ -7,12 +7,12 @@ import javax.swing.JOptionPane;
 
 public class Team {
 
-    public String name;
-    List<Player> players = new ArrayList<>();
+    private String name;
+    private List<Player> players = new ArrayList<>();
 
     public void register() {
 
-        name = JOptionPane.showInputDialog("Nome do time: ");
+        this.name = JOptionPane.showInputDialog("Nome do time: ");
 
         char more = 'x';
 
@@ -20,7 +20,7 @@ public class Team {
 
             Player player = new Player();
             player.register();
-            players.add(player);
+            this.addPlayer(player);
             more = JOptionPane.showInputDialog("Include more players? (Y/N)").toUpperCase().charAt(0);
 
         } while (more == 'Y');
@@ -30,7 +30,7 @@ public class Team {
     public String toString() {
 
         StringBuilder sb = new StringBuilder();
-        sb.append("Team players of " + name + ":\n");
+        sb.append("Team players of " + this.getName() + ":\n");
 
         for (Player player : players) {
 
@@ -46,7 +46,7 @@ public class Team {
 
         for (Player player : players) {
 
-            if (player.goalsQuantity > striker.goalsQuantity) {
+            if (player.getGoalsQuantity() > striker.getGoalsQuantity()) {
 
                 striker = player;
             }
@@ -61,9 +61,29 @@ public class Team {
 
         for (Player player : players) {
 
-            sum += player.goalsQuantity;
+            sum += player.getGoalsQuantity();
         }
 
         return sum;
+    }
+
+    public void addPlayer(Player player) {
+        players.add(player);
+    }
+
+    public void removePlayer(Player player) {
+        players.remove(player);
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public List<Player> getPlayers() {
+        return players;
     }
 }
