@@ -3,15 +3,51 @@ package module_two.simplebank_exercise.entities;
 import javax.swing.JOptionPane;
 
 public class Client {
-    
-    String name;
-    char sex;
-    String birthDate;
+
+    private String name;
+    private char sex;
+    private String birthDate;
 
     public void register() {
 
-        name = JOptionPane.showInputDialog("Name: ");
-        sex = JOptionPane.showInputDialog("Sex: (M/W)").toUpperCase().charAt(0);
-        birthDate = JOptionPane.showInputDialog("Birth date: ");
+        this.name = JOptionPane.showInputDialog("Name: ");
+        this.sex = JOptionPane.showInputDialog("Sex: (M/W)").toUpperCase().charAt(0);
+        this.birthDate = JOptionPane.showInputDialog("Birth date: ");
+    }
+
+    @Override
+    public String toString() {
+
+        StringBuilder sb = new StringBuilder();
+        sb.append("====== Client info ======\n");
+        sb.append(this.getName());
+        sb.append("\nSex: " + this.getSex());
+        sb.append("\nBirth Date: " + this.getBirthDate());
+
+        return sb.toString();
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public char getSex() {
+        return sex;
+    }
+
+    public void setSex(char sex) {
+        this.sex = sex;
+    }
+
+    public String getBirthDate() {
+        return birthDate;
+    }
+
+    public void setBirthDate(String birthDate) {
+        this.birthDate = birthDate;
     }
 }
