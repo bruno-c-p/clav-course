@@ -2,10 +2,6 @@ package module_two.book_exercise.application;
 
 import module_two.book_exercise.entities.Author;
 import module_two.book_exercise.entities.Book;
-import module_two.dvd_exercise.entities.DVD;
-import module_two.simplebank_exercise.entities.Account;
-import module_two.simplebank_exercise.entities.Agency;
-import module_two.simplebank_exercise.entities.Client;
 
 import javax.swing.*;
 import java.util.ArrayList;
@@ -101,7 +97,7 @@ public class Program {
         StringBuilder list = new StringBuilder();
 
         for (Book book : books) {
-            list.append((books.indexOf(book) + 1) + " " + book.toString()).append("\n_________________________\n");
+            list.append((books.indexOf(book) + 1) + " - " + book.toString()).append("\n_________________________\n");
         }
 
         return list.toString();
@@ -112,7 +108,7 @@ public class Program {
         StringBuilder list = new StringBuilder();
 
         for (Author author : authors) {
-            list.append(authors.indexOf(author) + 1).append(" ").append(author.toString()).append("\n_________________________\n");
+            list.append(authors.indexOf(author) + 1).append(" - ").append(author.toString()).append("\n_________________________\n");
         }
 
         return list.toString();
@@ -157,7 +153,7 @@ public class Program {
 
         for (Book book : books) {
             for (Author aut : book.getAuthors()) {
-                if (aut.getSex() == 'F') {
+                if (aut.getSex() == 'W') {
                     bookList.append(book.toString());
                 }
             }

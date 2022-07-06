@@ -12,7 +12,9 @@ public class Author {
 
         this.name = JOptionPane.showInputDialog("Full name: ");
 
-        while (this.name.split(" ").length < 1) {
+        System.out.println(this.name.split(" ").length);
+
+        while (this.name.split(" ").length <= 1) {
             this.name = JOptionPane.showInputDialog("Name and surname needed!! Full name: ");
         }
 

@@ -1,4 +1,4 @@
-package module_two.simplebank_exercise.entities;
+package module_two.bank.entities;
 
 import javax.swing.JOptionPane;
 

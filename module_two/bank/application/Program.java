@@ -1,4 +1,4 @@
-package module_two.simplebank_exercise.application;
+package module_two.bank.application;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;
@@ -6,9 +6,9 @@ import java.util.List;
 
 import javax.swing.JOptionPane;
 
-import module_two.simplebank_exercise.entities.Account;
-import module_two.simplebank_exercise.entities.Agency;
-import module_two.simplebank_exercise.entities.Client;
+import module_two.bank.entities.Account;
+import module_two.bank.entities.Agency;
+import module_two.bank.entities.Client;
 
 public class Program {
 

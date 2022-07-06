@@ -1,6 +1,6 @@
-package module_two.simplebank_exercise.entities;
+package module_two.bank_inheritance.entities;
 
-import javax.swing.JOptionPane;
+import javax.swing.*;
 
 public class Agency {
 
@@ -8,23 +8,22 @@ public class Agency {
     private String city;
     private String district;
 
+    public Agency() {
+        this.number = Integer.parseInt(JOptionPane.showInputDialog("Number: "));
+        this.city = JOptionPane.showInputDialog("City: ");
+        this.district = JOptionPane.showInputDialog("District: ");
+    }
+
     @Override
     public String toString() {
 
         StringBuilder sb = new StringBuilder();
-        sb.append("----- Agency " + this.getNumber() + "-----\n");
-        sb.append("Number: " + this.getNumber());
-        sb.append(" | City: " + this.getCity());
-        sb.append(" | District: " + this.getDistrict());
+        sb.append("----- Agency ").append(this.getNumber()).append("-----\n");
+        sb.append("Number: ").append(this.getNumber());
+        sb.append(" | City: ").append(this.getCity());
+        sb.append(" | District: ").append(this.getDistrict());
 
         return sb.toString();
-    }
-
-    public void register() {
-
-        this.number = Integer.parseInt(JOptionPane.showInputDialog("Number: "));
-        this.city = JOptionPane.showInputDialog("City: ");
-        this.district = JOptionPane.showInputDialog("District: ");
     }
 
     public int getNumber() {

@@ -7,7 +7,7 @@ import java.util.List;
 
 public class Book {
 
-    DecimalFormat df = new DecimalFormat("0,000.00");
+    DecimalFormat df = new DecimalFormat("#,###.00");
     private String title;
     private double price;
     List<Author> authors = new ArrayList<>();
@@ -26,7 +26,7 @@ public class Book {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("\nTitle: ").append(this.getTitle());
+        sb.append("Title: ").append(this.getTitle());
         sb.append("\nPrice: R$").append(df.format(this.getPrice()));
         sb.append("\nAuthor(s):\n");
 
