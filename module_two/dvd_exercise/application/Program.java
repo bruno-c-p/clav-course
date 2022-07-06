@@ -1,4 +1,4 @@
-package module_two.dvd_exercise.main;
+package module_two.dvd_exercise.application;
 
 import java.util.ArrayList;
 import java.util.List;

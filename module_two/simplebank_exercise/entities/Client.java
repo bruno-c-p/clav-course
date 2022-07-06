@@ -19,10 +19,10 @@ public class Client {
     public String toString() {
 
         StringBuilder sb = new StringBuilder();
-        sb.append("====== Client info ======\n");
-        sb.append(this.getName());
-        sb.append("\nSex: " + this.getSex());
-        sb.append("\nBirth Date: " + this.getBirthDate());
+        sb.append("----- Client info -----\n");
+        sb.append("Name: " + this.getName());
+        sb.append(" | Sex: " + this.getSex());
+        sb.append(" | Birth Date: " + this.getBirthDate());
 
         return sb.toString();
     }

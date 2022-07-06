@@ -1,4 +1,4 @@
-package module_two.simplebank_exercise.main;
+package module_two.simplebank_exercise.application;
 
 import java.text.DecimalFormat;
 import java.util.ArrayList;

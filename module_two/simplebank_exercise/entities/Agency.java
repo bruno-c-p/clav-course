@@ -12,10 +12,10 @@ public class Agency {
     public String toString() {
 
         StringBuilder sb = new StringBuilder();
-        sb.append("====== Agency info ======\n");
+        sb.append("----- Agency " + this.getNumber() + "-----\n");
         sb.append("Number: " + this.getNumber());
-        sb.append("\nCity: " + this.getCity());
-        sb.append("\nDistrict: " + this.getDistrict());
+        sb.append(" | City: " + this.getCity());
+        sb.append(" | District: " + this.getDistrict());
 
         return sb.toString();
     }

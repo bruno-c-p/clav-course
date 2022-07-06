@@ -1,4 +1,4 @@
-package module_two.soccer_exercise.main;
+package module_two.soccer_exercise.application;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -17,11 +17,11 @@ public class Account {
     public String toString() {
 
         StringBuilder sb = new StringBuilder();
-        sb.append("====== Account info ======\n");
+        sb.append("----- Account " + this.getNumber() + "-----\n");
         sb.append("Number: " + this.getNumber());
-        sb.append("\nBalance: " + df.format(this.getBalance()));
-        sb.append("\nAgency: " + this.getAgency().getNumber());
-        sb.append("\nClient: " + this.getClient().getName());
+        sb.append(" | Balance: " + df.format(this.getBalance()));
+        sb.append(" | Agency: " + this.getAgency().getNumber());
+        sb.append(" | Client: " + this.getClient().getName() + "\n");
 
         return sb.toString();
     }
