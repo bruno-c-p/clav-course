@@ -5,21 +5,12 @@ import javax.swing.*;
 public class UniversityAccount extends Account {
 
     @Override
-    public void withdraw(double amount) {
+    public void deposit(double amount) {
 
-        if (this.getBalance() >= amount) {
-            balance -= amount;
+        if (!(this.getBalance() + amount > 2000)) {
+            balance += amount;
         } else {
-            JOptionPane.showMessageDialog(null, "Insufficient balance!");
-        }
-    }
-
-    @Override
-    public void transfer(double amountSent, Account receivingAccount) {
-
-        if (this.getNumber() == receivingAccount.getNumber()) {
-            this.withdraw(amountSent);
-            receivingAccount.deposit(amountSent);
+            JOptionPane.showMessageDialog(null, "You cannot have a balance greater than R$ 2,000.00 ");
         }
     }
 }
